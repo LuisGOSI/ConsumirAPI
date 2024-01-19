@@ -14,7 +14,10 @@ export function Lista() {
 
     function retroceder() {
         if (porcentaje=== 0) {
-            setPor(0);
+            // Con esto hacemos que el contador vuelva de "Apagado" a "Encendido al 100%
+            setPor(porcentajes.length - 1);
+            //Con esto hacemos que no se puede retroceder más de "Apagado"
+            // setPor(0);
         } else {
             setPor(porcentaje - 1);
         }
