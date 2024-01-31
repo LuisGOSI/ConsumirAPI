@@ -1,17 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Contador} from './components/Contador';
-import { Texto }from './components/Texto';
-import { Lista } from './components/Lista';
-import { Puerta } from './components/Puerta';
+"use client";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Rutas } from "./components/Rutas";
 
-const root=ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-    <>
-        <Contador/>
-        <Texto/>
-        <Lista/>
-        <Puerta/>
-    </>
-)
+<Rutas></Rutas>
+);
