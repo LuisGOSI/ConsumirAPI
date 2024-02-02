@@ -17,7 +17,7 @@ export function Productos() {
     }, []);
 
     const listaProductos = dataProductos.map((producto)=>{
-        var foto = "https://apiconsumible.onrender.com/usuarios/images/" + producto.foto;
+        var foto = "https://apiconsumible.onrender.com/images/" + producto.foto;
         var editar = "/editar/" + producto.id;
         var borrar = "/borrar/" + producto.id;
         return(

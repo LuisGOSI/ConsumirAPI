@@ -16,7 +16,7 @@ export function Inicio(){
         });
     }, []);
     const listaUsuarios = dataUsuarios.map((usuario)=>{
-        var foto = "https://apiconsumible.onrender.com/images" + usuario.foto;
+        var foto = "https://apiconsumible.onrender.com/images/" + usuario.foto;
         var editar = "/editar/" + usuario.id;
         var borrar = "/borrar/" + usuario.id;
         return(
