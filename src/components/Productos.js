@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export function Productos() {
     const [dataProductos, setDataProductos] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:3000/api/productos/mostrarProductos")
+        axios.get("https://apiconsumible.onrender.com/api/productos/mostrarProductos")
         .then((response)=>{
             //console.log(response.data);
             setDataProductos(response.data);
@@ -17,7 +17,7 @@ export function Productos() {
     }, []);
 
     const listaProductos = dataProductos.map((producto)=>{
-        var foto = "view-source:https://apiconsumible.onrender.com/images/" + producto.foto;
+        var foto = "https://apiconsumible.onrender.com/usuarios/images/" + producto.foto;
         var editar = "/editar/" + producto.id;
         var borrar = "/borrar/" + producto.id;
         return(

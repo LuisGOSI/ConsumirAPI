@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export function Inicio(){
     const [dataUsuarios, setDataUsuarios] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:3000/api/mostrarUsuarios")
+        axios.get("https://apiconsumible.onrender.com/api/mostrarUsuarios")
         .then((response)=>{
             //console.log(response.data);
             setDataUsuarios(response.data);
@@ -16,7 +16,7 @@ export function Inicio(){
         });
     }, []);
     const listaUsuarios = dataUsuarios.map((usuario)=>{
-        var foto = "view-source:https://apiconsumible.onrender.com/images" + usuario.foto;
+        var foto = "https://apiconsumible.onrender.com/images" + usuario.foto;
         var editar = "/editar/" + usuario.id;
         var borrar = "/borrar/" + usuario.id;
         return(
