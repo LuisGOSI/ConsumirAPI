@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { URL_API } from "../config/rutas";
 
 // Funcion para agregar nuevos usuarios
 export function Nuevo() {
@@ -15,7 +16,7 @@ export function Nuevo() {
         formData.append("usuario", usuario);
         formData.append("password", password);
         formData.append("foto", foto);
-        const res = await axios.post("https://apiconsumible.onrender.com/api/nuevousuario", formData,{
+        const res = await axios.post( URL_API = "/nuevousuario", formData,{
             headers: {
                 "Content-Type": "multipart/form-data"
             }

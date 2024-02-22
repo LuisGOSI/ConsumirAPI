@@ -5,6 +5,7 @@ import { Menu } from "./Menu";
 import { Productos } from "./Productos";
 import { Nuevo } from "./Nuevo";
 import { EditarUsuario } from "./Editar";
+import { BorrarUsuario } from "./Borrar";
 
 export function Rutas() {
     return (
@@ -16,7 +17,8 @@ export function Rutas() {
                     <Route path="/" element={<Inicio />}></Route>
                     <Route path="/productos" element={<Productos />}></Route>
                     <Route path="/nuevo" element={<Nuevo />}></Route>
-                    <Route path="/editarUsuario" element={<EditarUsuario />}></Route>
+                    <Route path="/editar/:id" element={<EditarUsuario />}></Route>
+                    <Route path="/borrar/:id" element={<BorrarUsuario />}></Route>
                 </Routes>
             </BrowserRouter>
         </>
