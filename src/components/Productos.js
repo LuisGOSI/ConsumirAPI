@@ -19,8 +19,8 @@ export function Productos() {
 
     const listaProductos = dataProductos.map((producto)=>{
         var foto = URL_IMAGES + producto.foto;
-        var editar = "/editar/" + producto.id;
-        var borrar = "/borrar/" + producto.id;
+        var editar = "/editarPr/" + producto.id;
+        var borrar = "/borrarPr/" + producto.id;
         return(
             <tr key={producto.id} className="align-middle">
                 <td>{producto.id}</td>
@@ -36,20 +36,31 @@ export function Productos() {
         );
     });
     return(
-        <table className="table table-hover">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Stock</th>
-                    <th>Foto</th>
-                    <th>Editar / Borrar</th>
-                </tr>
-            </thead>
-            <tbody>
-                {listaProductos}
-            </tbody>
-        </table>
+        <div className="container mt-5">
+            <div className="container">
+                <div className="card">
+                    <div className="card-header">
+                        <h1>Lista de productos</h1>
+                    </div>
+                    <div className="card-body">
+                        <table className="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Foto</th>
+                                    <th>Editar / Borrar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {listaProductos}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
