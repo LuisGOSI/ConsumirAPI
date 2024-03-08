@@ -1,9 +1,11 @@
 import { URL_API_PRODUCTOS } from "../config/rutas";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function NuevoProducto() {
 
+    const navigate = useNavigate();
     const [mensaje, setMensaje] = useState("");
     const [nombre, setNombre] = useState("");
     const [precio, setPrecio] = useState("");
@@ -31,7 +33,8 @@ export function NuevoProducto() {
         setMensaje(res.data);
         setTimeout(() => {
             setMensaje("");
-        }, 3000);
+            navigate("/productos");
+        }, 700);
     }
 
     return (

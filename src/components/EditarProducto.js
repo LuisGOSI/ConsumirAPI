@@ -1,11 +1,12 @@
 import { URL_API_PRODUCTOS, URL_IMAGES } from "../config/rutas";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export function EditarProducto() {
 
     const params = useParams();
+    const navigate = useNavigate();
     const [id, setId] = useState(params.id);
     const [mensaje, setMensaje] = useState("");
     const [nombre, setNombre] = useState("");
@@ -45,7 +46,9 @@ export function EditarProducto() {
         setMensaje(res.data);
         setTimeout(() => {
             setMensaje("");
-        }, 3000);
+            navigate("/productos");
+        }, 700);
+        
     }
 
     return (
